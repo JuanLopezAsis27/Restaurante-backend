@@ -5,7 +5,7 @@ const getReserves = async (req, res) => {
     const reserves = await Reserve.find().populate("user");
     res.json(reserves);
   } catch (error) {
-    return res.status(404).json({ message: "Surgio un error y no se pudo encontrar las reservas" });
+    return res.status(404).json({ message: "Surgio un error y no se pudo encontrar las reservas." });
     
   }
 };
@@ -15,7 +15,7 @@ const getUserReserves = async (req, res) => {
     const reserves = await Reserve.find({ user: req.user.id }).populate("user");
     res.json(reserves);
   } catch (error) {
-    return res.status(404).json({ message: "Surgio un error y no se pudo encontrar las reservas" });
+    return res.status(404).json({ message: "Surgio un error y no se pudo encontrar las reservas." });
   }
 };
 
